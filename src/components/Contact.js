@@ -15,7 +15,6 @@ const StyleContactDiv = styled.div`
     left:50%;
     top:50%;
     transform: translate(-50%,-50%);
-    border:2px solid #175DC6;
 `;
 
 const StyleProfile = styled.div`
@@ -26,7 +25,6 @@ const StyleProfile = styled.div`
     top:50%;
     left:50%;
     transform: translate(-50%, -50%);
-    border:2px solid #175DC6;
 `;
 
 const StyleH3 = {
@@ -65,7 +63,7 @@ const Stylespan2 = {
 
 const Contact = () => {
     return(
-        <StyleContact>
+        <StyleContact id="4">
             <StyleContactDiv>
                 <StyleProfile>
                     <h3 style={StyleH3}>= Contact =</h3>

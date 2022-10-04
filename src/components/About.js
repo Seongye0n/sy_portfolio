@@ -1,7 +1,6 @@
 import React, {useEffect, useRef} from 'react';
 import styled from 'styled-components';
 import About_donut from './About_donut';
-import Pratice from './pratice'
 
 const StyleAbout = styled.div`
     position:relative;
@@ -17,7 +16,6 @@ const StyleAboutDiv = styled.div`
     left:50%;
     top:50%;
     transform: translate(-50%,-50%);
-    border:2px solid #175DC6;
 `;
 
 const StyleContainer = styled.div`
@@ -29,7 +27,6 @@ const StyleContainer = styled.div`
     margin: auto;
     top:50%;
     transform: translateY(-50%);
-    border:2px solid #175DC6;
 `;
 
 const StyleH3 = {
@@ -77,7 +74,7 @@ const Stylespan3={
 
 const About = () => {
     return( 
-        <StyleAbout>
+        <StyleAbout id="2">
             <StyleAboutDiv>
                <StyleContainer>
                     <div style={{"grid-row": "span 2"}}>

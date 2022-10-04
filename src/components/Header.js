@@ -1,5 +1,6 @@
-import React, {useEffect, useState, handleScroll} from 'react';
+import React, {useEffect, useState} from 'react';
 import styled from 'styled-components';
+import { Link } from "react-scroll";
 
 const StyledHeader = styled.header`
     position: fixed;
@@ -38,9 +39,7 @@ const liStyle = {
 
 const useScroll = () => {
     //useState를 y:0으로 초기화
-    const [state, setState] = useState({
-        y:0
-    });
+    const [state, setState] = useState({y:0});
 
     //현재 윈도우 스크롤 바의 y좌표를 state를 수정함.
     const onScroll = () => {
@@ -52,13 +51,13 @@ const useScroll = () => {
         window.addEventListener("scroll", onScroll);
         return () => window.removeEventListener("scroll", onScroll);
     }, []);
-    console.log(state);
     return state;
     //useScroll 함수는 state y:?를 반환함.
 };
 
+
 const Header = () => {
-    const {y} = useScroll();
+    const {y} = useScroll(); // Scroll 위치에 따라 메뉴 color 변경
 
     function changeFont(e) {
         e.target.style.color = '#175dc6';
@@ -73,18 +72,18 @@ const Header = () => {
                 <img src="/images/logo.png" alt="logo" style={{width:"100%", height:"90%", align:"center"}}/>
             </StyledLogo>
                 <ul style={ulStyle}>
-                    <li style={liStyle}><a href="./src/components/Main.js" style={{'-webkit-text-stroke': '1px #175dc6','font-size': '22px', 
-                                                                                    color: y < 570 ? "#175dc6" : "#9cd8f8"}}
-                                            onMouseOver={changeFont} onMouseLeave={leaveFont}>Main</a></li>
-                    <li style={liStyle}><a href="./src/components/About.js" style={{'-webkit-text-stroke': '1px #175dc6', 'font-size': '22px',
-                                                                                    color: 570 <= y &&  y < 1140 ? "#175dc6" : "#9cd8f8"}}
-                                            onMouseOver={changeFont} onMouseLeave={leaveFont}>About me</a></li>
-                    <li style={liStyle}><a href="./src/components/Project.js" style={{'-webkit-text-stroke': '1px #175dc6', 'font-size': '22px',
-                                                                                    color: 1140 <= y &&  y < 1720 ? "#175dc6" : "#9cd8f8"}} 
-                                            onMouseOver={changeFont} onMouseLeave={leaveFont}>Project</a></li>
-                    <li style={liStyle}><a href="./src/components/Contact.js" style={{'-webkit-text-stroke': '1px #175dc6', 'font-size': '22px',
-                                                                                    color: 1720 <= y? "#175dc6" : "#9cd8f8"}} 
-                                            onMouseOver={changeFont} onMouseLeave={leaveFont}>Contact</a></li>
+                    <li style={liStyle}><Link to="1" spy={true} smooth={true}>
+                        <a href="#" style={{'-webkit-text-stroke': '1px #175dc6','font-size': '22px', color: y < 570 ? "#175dc6" : "#9cd8f8"}}
+                            onMouseOver={changeFont} onMouseLeave={leaveFont}>Main</a></Link></li>
+                    <li style={liStyle}><Link to="2" spy={true} smooth={true}>
+                        <a href="#" style={{'-webkit-text-stroke': '1px #175dc6', 'font-size': '22px', color: 570 <= y &&  y < 1140 ? "#175dc6" : "#9cd8f8"}}
+                            onMouseOver={changeFont} onMouseLeave={leaveFont}>About me</a></Link></li>
+                    <li style={liStyle}><Link to="3" spy={true} smooth={true}>
+                        <a href="#" style={{'-webkit-text-stroke': '1px #175dc6', 'font-size': '22px', color: 1140 <= y &&  y < 1720 ? "#175dc6" : "#9cd8f8"}} 
+                            onMouseOver={changeFont} onMouseLeave={leaveFont}>Project</a></Link></li>
+                    <li style={liStyle}><Link to="4" spy={true} smooth={true}>
+                        <a href="#" style={{'-webkit-text-stroke': '1px #175dc6', 'font-size': '22px', color: 1720 <= y? "#175dc6" : "#9cd8f8"}} 
+                            onMouseOver={changeFont} onMouseLeave={leaveFont}>Contact</a></Link></li>
                 </ul>
         </StyledHeader>
     );

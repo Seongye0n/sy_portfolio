@@ -15,7 +15,6 @@ const StyleProjectDiv = styled.div`
     left:50%;
     top:50%;
     transform: translate(-50%,-50%);
-    border:2px solid #175DC6;
 `;
 
 const StyleContainer = styled.div`
@@ -33,7 +32,7 @@ const StyleContainer = styled.div`
 
 const Project = () => {
     return(
-        <StyleProject>
+        <StyleProject id="3">
             <StyleProjectDiv>
                 <StyleContainer>
                     <div style={{"grid-row": "span 2"}}>화살표</div>

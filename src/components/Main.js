@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 
 const StyleMain = styled.div`
@@ -14,7 +14,6 @@ const StyleMainDiv = styled.div`
     left:50%;
     top:60%;
     transform: translate(-50%,-50%);
-    border:2px solid #175DC6;
 `;
 
 const StyleProfile = styled.div`
@@ -27,7 +26,6 @@ const StyleProfile = styled.div`
     top:50%;
     left:50%;
     transform: translate(-50%, -50%);
-    border:2px solid #175DC6;
 `;
 
 const Styleimg = styled.div`
@@ -38,36 +36,41 @@ const Styleimg = styled.div`
 
 const ProfileText = styled.div`
     position: ablsolute;
+    padding:100px 0px;
 `;
 
 const Styledivimg = {
+    top: '50%',
+    transform: 'translateY(-50%)',
     position: "relative"
 };
 
-const Styledivp = {
-    position: "relative",
-    height: "45%",
-    top: "50%",
-    left:"50%",
-    transform: "translate(-50%,-57%)",
-    padding: "0% 5%"
-};
-
 const Main = () => {
+    const txt = "Welcome to Park Seong-yeon's portfolio. \n I'm hoping to be a front-end developer.";
+    const [Text, setText] = useState('');  //Text = ''
+    const [Count,setCount] = useState(0);  //Count = 0
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setText(Text + txt[Count]); //이전 set문자 + 다음문자
+            setCount(Count + 1);  //개수 체크
+        }, 30);
+        if(Count == txt.length){
+            clearInterval(interval); //문자열 체크를 통해 setInterval 해제함.
+        }
+        return() => clearInterval(interval); //언마운트시 setInterval을 해제함.
+    })
+
     return(
-        <StyleMain>
+        <StyleMain id="1">
             <StyleMainDiv>
                 <StyleProfile>
                     <Styleimg>
                         <p><img src="/images/Profile.png" alt="Profile" style={{Styledivimg}}/></p>
                     </Styleimg>
                     <ProfileText>
-                        <p style={Styledivp}>
-                        안녕하세요 박성연입니다.<br/>
-                        프론트엔드 개발을 희망하고 있습니다.<br/>
-                        정돈된 코딩과, 전문성을 가질 수 있는 개발자가 되기 위해 노력<br/> 
-                        진행중 &gt; 진행중 (로딩중 디자인 사용하기)<br/>
-                        입니다.</p>
+                        <p style={{color:'#175dc6', 'font-size': '22px', 'white-space': 'pre-wrap', '-webkit-text-stroke': '0.5px #175dc6'}}> 
+                            {Text} </p>
                     </ProfileText>
                 </StyleProfile>
             </StyleMainDiv>
