@@ -1,0 +1,58 @@
+//Header
+.ulStyle{
+    position: left;
+    display:inline-block;
+    width: 40%;
+    margin-left: 28%;
+    list-style: none;
+}
+.liStyle{
+    display:inline-block;
+    width: 24.6%;
+    color : #9cd8f8;
+    text-align: center;
+}
+
+@media screen and (max-width:1023px) {
+   .ulStyle{
+        width: 70%;
+        margin:0;
+        padding:0;
+        margin-left:8%;
+   }
+   .liStyle{
+        width: 20%;
+        margin-right: 3%;
+   }
+}
+
+//Main
+.Styledivimg{
+    top: 50%;
+    transform: translateY(-50%);
+    position: relative;
+}
+@media screen and (max-width:1023px) {
+    .Styledivimg{
+         width: 100%;
+         margin:0;
+         padding:0;
+         margin-left:5%;
+    }
+}
+
+//About
+.StyleH3{
+    display: inline-block;
+    font-size: 22px;
+    color: #9cd8f8;
+    margin-top: 2%;
+    margin-bottom: 0%;
+    margin-left: 15%;
+    -webkit-text-stroke: 1.5px #175dc6;
+}
+@media screen and (max-width:1023px) {
+    .StyleH3{
+        padding-top:3%;
+    }
+}

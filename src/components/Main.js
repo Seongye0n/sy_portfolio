@@ -1,10 +1,16 @@
 import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
+import '../style/styles.scss';
 
 const StyleMain = styled.div`
     position:absolute;
     width:100%;
     height:93vh;
+
+    @media screen and (max-width:1023px) {
+        width:100%;
+        height:40vh;
+    }
 `;
 
 const StyleMainDiv = styled.div`
@@ -14,36 +20,50 @@ const StyleMainDiv = styled.div`
     left:50%;
     top:60%;
     transform: translate(-50%,-50%);
+
+    @media screen and (max-width:1023px) {
+        width:90%;
+        height:100%;
+        left:50%;
+        height:75%;
+        top:58.5%;
+    }
 `;
 
 const StyleProfile = styled.div`
     position: absolute;
-    display: inline-grid;
-    grid-template-columns: 0.8fr 1.2fr;
+    display: grid;
+    grid-Template-Columns:0.8fr 1.2fr;
     width:90%;
     height:80%;
     margin: auto;
     top:50%;
     left:50%;
     transform: translate(-50%, -50%);
+    @media screen and (max-width:1023px) {
+        width:100%;
+        height:100%;
+    }
 `;
 
 const Styleimg = styled.div`
     position: relative;
     padding-top:3%;
     padding-left:12%;
+    @media screen and (max-width:1023px) {
+        padding-top:10%;
+        padding-left:5%;
+    }
 `;
 
 const ProfileText = styled.div`
-    position: ablsolute;
+    position: relative;
     padding:100px 0px;
+    @media screen and (max-width:1023px) {
+        margin-left:10%;
+    }
 `;
 
-const Styledivimg = {
-    top: '50%',
-    transform: 'translateY(-50%)',
-    position: "relative"
-};
 
 const Main = () => {
     const txt = "Welcome to Park Seong-yeon's portfolio. \n I'm hoping to be a front-end developer.";
@@ -66,10 +86,10 @@ const Main = () => {
             <StyleMainDiv>
                 <StyleProfile>
                     <Styleimg>
-                        <p><img src="/images/Profile.png" alt="Profile" style={{Styledivimg}}/></p>
+                        <p style={{display:'inline'}}><img src="/images/Profile.png" alt="Profile" className='Styledivimg'/></p>
                     </Styleimg>
                     <ProfileText>
-                        <p style={{color:'#175dc6', 'font-size': '22px', 'white-space': 'pre-wrap', '-webkit-text-stroke': '0.5px #175dc6'}}> 
+                        <p style={{float: 'left', color:'#175dc6', fontSize: '22px', whiteSpace: 'preWrap', WebkitTextStroke: '0.5px #175dc6'}}> 
                             {Text} </p>
                     </ProfileText>
                 </StyleProfile>

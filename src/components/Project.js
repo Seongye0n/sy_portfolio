@@ -1,5 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Swiper, SwiperSlide} from "swiper/react"; // basic
+import SwiperCore, {Pagination, Navigation} from "swiper";
+import "swiper/css"; //basic
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 const StyleProject = styled.div`
     position:relative;
@@ -15,32 +20,60 @@ const StyleProjectDiv = styled.div`
     left:50%;
     top:50%;
     transform: translate(-50%,-50%);
+    border: 1px solid #175dc6;
 `;
 
-const StyleContainer = styled.div`
-    position: relative;
-    display: grid;
-    grid-template-columns: 0.1fr 0.5fr 0.4fr 0.1fr;
-    grid-template-rows: 0.8fr 0.2fr;
-    width:90%;
-    height:80%;
-    margin: auto;
-    top:50%;
-    transform: translateY(-50%);
-    border:2px solid #175DC6;
-`;
+const StyleSwiperLi = {
+    position:'relative', 
+    left:'50%', 
+    transform: 'translate(-50%, 0%)'
+}
+
+const StyleA = {
+    TextDecoder: 'none',
+    position:'absolute', 
+    width: '50%', 
+    padding: '0.5% 0%', 
+    textAlign:'center', 
+    top: '50%', 
+    left:'50%', 
+    transform: 'translate(-50%, -50%)', 
+    backgroundColor:'rgba(255, 255, 255, 0.7)'
+};
+
+function styleOnA(e){
+    e.target.style.backgroundColor = 'rgba(0, 0, 0, 0.3)';
+    e.target.style.color = '#ffffff';
+};
+
+function styleOnA2(e){
+    e.target.style.backgroundColor = 'rgba(255, 255, 255, 0.7)';
+    e.target.style.color = '#000000';
+};
+
+SwiperCore.use([Navigation, Pagination]);
 
 const Project = () => {
     return(
         <StyleProject id="3">
             <StyleProjectDiv>
-                <StyleContainer>
-                    <div style={{"grid-row": "span 2"}}>화살표</div>
-                    <div style={{border: '1px solid black'}}>project img</div>
-                    <div style={{border: '1px solid black'}}>project content</div>
-                    <div style={{"grid-column": "span 2", border: '1px solid black'}}>ooo</div>
-                    <div style={{"grid-row": "span 2"}}>화살표</div>
-                </StyleContainer>
+                <Swiper
+                    className="banner"
+                    spaceBetween={50}
+                    slidesPerView={1}
+                    navigation
+                    pagination={{ clickable: true }}
+                >
+                    <SwiperSlide>
+                        <img src={process.env.PUBLIC_URL + '/images/project1.jpg'} style={StyleSwiperLi}/>
+                        <a href='https://github.com/Seongye0n/sy_coowoshop.git' target='_blank' alt='프로젝트1'
+                            style={StyleA} onMouseOver={styleOnA} onMouseLeave={styleOnA2} >    
+                            https://github.com/Seongye0n/sy_coowoshop.git</a>
+                    </SwiperSlide>
+                    <SwiperSlide>
+                    <img src={process.env.PUBLIC_URL + '/images/waiting.jpg'} style={StyleSwiperLi}/>
+                    </SwiperSlide>
+                </Swiper>
             </StyleProjectDiv>
         </StyleProject>
     );

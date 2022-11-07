@@ -28,37 +28,37 @@ const StyleProfile = styled.div`
 `;
 
 const StyleH3 = {
-    'display': 'block',
-    'font-size': '22px',
-    'color': '#9cd8f8',
-    'margin-top' : '5%',
-    'margin-left' : '10%',
-    '-webkit-text-stroke': '1.5px #175dc6'
+    display: 'block',
+    fontSize: '22px',
+    color: '#9cd8f8',
+    marginTop : '5%',
+    marginLeft : '10%',
+    WebkitTextStroke: '1.5px #175dc6'
 };
 
 const StyleUl = {
-    'list-style': 'none',
-    'font-size' : '15px',
-    'color' : '#175dc6',
-    'margin-top' : '3%',
-    'margin-left' : '10%',
-    'font-weight' : 'bold'
+    listStyle: 'none',
+    fontSize : '15px',
+    color : '#175dc6',
+    marginTop : '3%',
+    marginLeft : '10%',
+    fontWeight : 'bold'
 };
 
 const Styleli = {
-    'padding': '10px 10px 10px 0px',
-    'color' : '#175dc6'
+    padding: '10px 10px 10px 0px',
+    color : '#175dc6'
 };
 const Stylespan = {
-    'float': 'left',
-    'width' : '200px',
-    'text-align' : 'right',
-    'margin-right': '10px',
-    'font-size' : '16px'
+    float: 'left',
+    width : '200px',
+    textAlign : 'right',
+    marginRight: '10px',
+    fontSize : '16px'
 };
 const Stylespan2 = {
-    'font-size' : '13px',
-    'color' : '#175dc6'
+    fontSize : '13px',
+    color : '#175dc6'
 };
 
 const Contact = () => {

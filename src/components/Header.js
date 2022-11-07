@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import styled from 'styled-components';
 import { Link } from "react-scroll";
+import '../style/styles.scss';
 
 const StyledHeader = styled.header`
     position: fixed;
@@ -12,7 +13,19 @@ const StyledHeader = styled.header`
     right:0;
     background:#fff;
     z-index:1;
+
+    @media screen and (max-width:1023px) {
+    /* 타블렛 */
+        position: fixed;
+        width:100%;
+        height:7vh;
+        top:0;
+        left:0;
+        z-index:1;
+    }
 `;
+
+
 
 const StyledLogo = styled.div`
     width:10%;
@@ -20,22 +33,20 @@ const StyledLogo = styled.div`
     margin-top:1%;
     margin-left:8.5vw;
     display:inline-block;
+
+    @media screen and (max-width:1023px) {
+    /* 타블렛 */
+        width:20%;
+        height:6vh;
+        margin-left:2vw;
+    }
+            
+    @media screen and (max-width:767px) {
+    /* 모바일 */
+        
+    
+    }
 `;
-
-const ulStyle = {
-    position:"left",
-    display:"inline-block",
-    width: "40%",
-    "margin-left": "28%",
-    "list-style": "none"
-};
-
-const liStyle = {
-    display:"inline-block",
-    width: "24.6%",
-    color : "#9cd8f8",
-    'text-align': "center"
-};
 
 const useScroll = () => {
     //useState를 y:0으로 초기화
@@ -71,19 +82,15 @@ const Header = () => {
             <StyledLogo>
                 <img src="/images/logo.png" alt="logo" style={{width:"100%", height:"90%", align:"center"}}/>
             </StyledLogo>
-                <ul style={ulStyle}>
-                    <li style={liStyle}><Link to="1" spy={true} smooth={true}>
-                        <a href="#" style={{'-webkit-text-stroke': '1px #175dc6','font-size': '22px', color: y < 570 ? "#175dc6" : "#9cd8f8"}}
-                            onMouseOver={changeFont} onMouseLeave={leaveFont}>Main</a></Link></li>
-                    <li style={liStyle}><Link to="2" spy={true} smooth={true}>
-                        <a href="#" style={{'-webkit-text-stroke': '1px #175dc6', 'font-size': '22px', color: 570 <= y &&  y < 1140 ? "#175dc6" : "#9cd8f8"}}
-                            onMouseOver={changeFont} onMouseLeave={leaveFont}>About me</a></Link></li>
-                    <li style={liStyle}><Link to="3" spy={true} smooth={true}>
-                        <a href="#" style={{'-webkit-text-stroke': '1px #175dc6', 'font-size': '22px', color: 1140 <= y &&  y < 1720 ? "#175dc6" : "#9cd8f8"}} 
-                            onMouseOver={changeFont} onMouseLeave={leaveFont}>Project</a></Link></li>
-                    <li style={liStyle}><Link to="4" spy={true} smooth={true}>
-                        <a href="#" style={{'-webkit-text-stroke': '1px #175dc6', 'font-size': '22px', color: 1720 <= y? "#175dc6" : "#9cd8f8"}} 
-                            onMouseOver={changeFont} onMouseLeave={leaveFont}>Contact</a></Link></li>
+                <ul className='ulStyle'>
+                    <li className='liStyle'><Link to="1" spy={true} smooth={true} style={{WebkitTextStroke: '1px #175dc6', fontSize: '22px', color: y < 570 ? "#175dc6" : "#9cd8f8"}}
+                            onMouseOver={changeFont} onMouseLeave={leaveFont}>Main</Link></li>
+                    <li className='liStyle'><Link to="2" spy={true} smooth={true} style={{WebkitTextStroke: '1px #175dc6', fontSize: '22px',  lineHeight:'2px', color: 570 <= y &&  y < 1140 ? "#175dc6" : "#9cd8f8"}}
+                            onMouseOver={changeFont} onMouseLeave={leaveFont}>About me</Link></li>
+                    <li className='liStyle'><Link to="3" spy={true} smooth={true} style={{WebkitTextStroke: '1px #175dc6', fontSize: '22px',color: 1140 <= y &&  y < 1720 ? "#175dc6" : "#9cd8f8"}}
+                            onMouseOver={changeFont} onMouseLeave={leaveFont}>Project</Link></li>
+                    <li className='liStyle'><Link to="4" spy={true} smooth={true} style={{WebkitTextStroke: '1px #175dc6', fontSize: '22px', color: 1720 <= y? "#175dc6" : "#9cd8f8"}}
+                            onMouseOver={changeFont} onMouseLeave={leaveFont}>Contact</Link></li>
                 </ul>
         </StyledHeader>
     );

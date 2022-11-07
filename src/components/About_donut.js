@@ -16,7 +16,7 @@ const StyleItem = styled.div`
 const StyleSpan = {
     position: 'relative',
     color:'#fff',
-    '-webkit-text-stroke': '1px #175dc6'
+    WebkitTextStroke: '1px #175dc6'
 };
 
 
@@ -32,6 +32,7 @@ const About_donut = () => {
                         value:80,
                         color:"#175dc6",
                         name:"HTML",
+                        startAngle:270,
                     },
                 ]}
                 reveal={80}
@@ -56,6 +57,7 @@ const About_donut = () => {
                         value:70,
                         color:"#175dc6",
                         name:"CSS",
+                        startAngle:270,
                     },
                 ]}
                 reveal={70}
@@ -80,6 +82,7 @@ const About_donut = () => {
                         value:60,
                         color:"#175dc6",
                         name:"Javascript",
+                        startAngle:270,
                     },
                 ]}
                 reveal={60}
@@ -104,9 +107,10 @@ const About_donut = () => {
                         value:50,
                         color:"#175dc6",
                         name:"React",
+                        startAngle:270,
                     },
                 ]}
-                reveal={40}
+                reveal={50}
                 lineWidth={5}
                 background='#ffffff'
                 border='1px solid #175dc6'
