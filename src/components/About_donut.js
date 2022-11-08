@@ -6,6 +6,13 @@ const StyleChart = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     padding: 0% 12%;
+    @media screen and (max-width:1023px) {
+        width:100%;
+        height:90%;
+        padding:0;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
 `;
 
 const StyleItem = styled.div`
@@ -16,12 +23,13 @@ const StyleItem = styled.div`
 const StyleSpan = {
     position: 'relative',
     color:'#fff',
-    WebkitTextStroke: '1px #175dc6'
+    WebkitTextStroke: '1px #175dc6',
 };
 
 
 const About_donut = () => {
-   
+    
+
     return(
         <StyleChart>
             <StyleItem>

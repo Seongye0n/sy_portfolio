@@ -39,21 +39,11 @@ const StyleContainer = styled.div`
     top:50%;
     transform: translateY(-50%);
     @media screen and (max-width:1023px) {
-        background-color:orange;
         width:100%;
         height:100%;
-        grid-template-rows: 1fr 1fr 1fr;
+        grid-template-columns: 0.5fr 1fr;
     }
 `;
-
-const StyleUl = {
-    float : 'left',
-    listStyle: 'none',
-    fontSize : '15px',
-    color : '#175dc6',
-    fontWeight : 'bold',
-    marginLeft : '7%',
-};
 
 const Styleli = {
     float : 'left',
@@ -84,21 +74,20 @@ const About = () => {
         <StyleAbout id="2">
             <StyleAboutDiv>
                <StyleContainer>
-                    <div style={{gridRow: "span 2"}}>
+                    <div style={{gridRow: "span 2"}} className='aboutGrid'>
                         <h3 className='StyleH3'>= Skill =</h3>
                         <About_donut/>
-                        {/* <Pratice/> */}
                     </div>
-	                <div>
+	                <div className='aboutGrid'>
                         <h3 className='StyleH3'>= Certificate =</h3>
-                        <ul style={StyleUl}>
+                        <ul className='StyleUl'>
                             <li style={Styleli}>- 정보처리기사  <span style={Stylespan}>(2019.08.16)</span></li>
                             <li style={Styleli}>- 웹디자인기능사 <span style={Stylespan}>(2022.06.24)</span></li>
                         </ul>
                     </div>
-	                <div>
+	                <div className='aboutGrid'>
                         <h3 className='StyleH3'>= Timeline =</h3>
-                        <ul style={StyleUl}>
+                        <ul className='StyleUl'>
                             <li style={Styleli}><span style={Stylespan2}>2016</span><span style={Stylespan3}>신라대학교 컴퓨터공학과 입학</span></li>
                             <li style={Styleli}><span style={Stylespan2}>2019 ~ 2020</span><span style={Stylespan3}>웹 인턴 및 신라대학교 IT 학과 졸업</span></li>
                             <li style={Styleli}><span style={Stylespan2}>2021 ~ 2022</span><span style={Stylespan3}>인제대학교 약물유전체연구센터 근무<br/>

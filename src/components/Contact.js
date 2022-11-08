@@ -1,11 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
+import '../style/styles.scss';
 
 const StyleContact = styled.div`
     position:relative;
     width:100%;
     height:93vh;
     top:100vh;
+    @media screen and (max-width:1023px) {
+        width:100%;
+        top:40vh;
+        height:40vh;
+    }
 `;
 
 const StyleContactDiv = styled.div`
@@ -15,6 +21,10 @@ const StyleContactDiv = styled.div`
     left:50%;
     top:50%;
     transform: translate(-50%,-50%);
+    @media screen and (max-width:1023px) {
+        width:100%;
+        height:100%;
+    }
 `;
 
 const StyleProfile = styled.div`

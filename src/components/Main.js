@@ -6,10 +6,15 @@ const StyleMain = styled.div`
     position:absolute;
     width:100%;
     height:93vh;
-
     @media screen and (max-width:1023px) {
         width:100%;
-        height:40vh;
+        height:35vh;
+        top:7vh;
+    }
+    @media screen and (max-width:767px) {
+        width:100%;
+        height:50vh;
+        top:4vh;
     }
 `;
 
@@ -20,13 +25,14 @@ const StyleMainDiv = styled.div`
     left:50%;
     top:60%;
     transform: translate(-50%,-50%);
-
     @media screen and (max-width:1023px) {
         width:90%;
         height:100%;
         left:50%;
-        height:75%;
-        top:58.5%;
+    }
+    @media screen and (max-width:767px) {
+        width:100%;
+        height:100%;
     }
 `;
 
@@ -42,7 +48,12 @@ const StyleProfile = styled.div`
     transform: translate(-50%, -50%);
     @media screen and (max-width:1023px) {
         width:100%;
+        bottom:0;
+    }
+    @media screen and (max-width:767px) {
+        width:100%;
         height:100%;
+        grid-Template-Rows: repeat(2, 1fr);
     }
 `;
 
@@ -54,6 +65,10 @@ const Styleimg = styled.div`
         padding-top:10%;
         padding-left:5%;
     }
+    @media screen and (max-width:767px) {
+        margin:0;
+        padding:0;
+    }
 `;
 
 const ProfileText = styled.div`
@@ -61,6 +76,9 @@ const ProfileText = styled.div`
     padding:100px 0px;
     @media screen and (max-width:1023px) {
         margin-left:10%;
+    }
+    @media screen and (max-width:767px) {
+        
     }
 `;
 

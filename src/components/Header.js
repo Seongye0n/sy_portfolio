@@ -5,7 +5,7 @@ import '../style/styles.scss';
 
 const StyledHeader = styled.header`
     position: fixed;
-    width:100vw;
+    width:100%;
     height:10vh;
     display:block;
     top:0;
@@ -13,20 +13,19 @@ const StyledHeader = styled.header`
     right:0;
     background:#fff;
     z-index:1;
-
     @media screen and (max-width:1023px) {
-    /* 타블렛 */
         position: fixed;
         width:100%;
         height:7vh;
-        top:0;
-        left:0;
+        z-index:1;
+    }
+    @media screen and (max-width:767px) {
+        position: fixed;
+        width:100%;
+        height:4vh;
         z-index:1;
     }
 `;
-
-
-
 const StyledLogo = styled.div`
     width:10%;
     height:6vh;
@@ -35,16 +34,13 @@ const StyledLogo = styled.div`
     display:inline-block;
 
     @media screen and (max-width:1023px) {
-    /* 타블렛 */
         width:20%;
         height:6vh;
         margin-left:2vw;
     }
             
     @media screen and (max-width:767px) {
-    /* 모바일 */
-        
-    
+        display:none;
     }
 `;
 
@@ -66,9 +62,9 @@ const useScroll = () => {
     //useScroll 함수는 state y:?를 반환함.
 };
 
-
 const Header = () => {
     const {y} = useScroll(); // Scroll 위치에 따라 메뉴 color 변경
+    const x = window.innerWidth; // 사용자 브라우저 width 크기
 
     function changeFont(e) {
         e.target.style.color = '#175dc6';
@@ -83,13 +79,25 @@ const Header = () => {
                 <img src="/images/logo.png" alt="logo" style={{width:"100%", height:"90%", align:"center"}}/>
             </StyledLogo>
                 <ul className='ulStyle'>
-                    <li className='liStyle'><Link to="1" spy={true} smooth={true} style={{WebkitTextStroke: '1px #175dc6', fontSize: '22px', color: y < 570 ? "#175dc6" : "#9cd8f8"}}
+                    <li className='liStyle'><Link to="1" spy={true} smooth={true} className='linkStyle' 
+                        style={{color: 1023 < x ? (y < 570 ? "#175dc6" : "#9cd8f8") 
+                                : 768 <= x <= 1023 ? ( y < 340 ? "#175dc6" : "#ffffff") 
+                                : x < 768 ? ( y < 340 ? "#175dc6" : "#ffffff") : '#ffffff' }}
                             onMouseOver={changeFont} onMouseLeave={leaveFont}>Main</Link></li>
-                    <li className='liStyle'><Link to="2" spy={true} smooth={true} style={{WebkitTextStroke: '1px #175dc6', fontSize: '22px',  lineHeight:'2px', color: 570 <= y &&  y < 1140 ? "#175dc6" : "#9cd8f8"}}
+                    <li className='liStyle'><Link to="2" spy={true} smooth={true} className='linkStyle'  
+                        style={{color: 1023 < x ? (570 <= y &&  y < 1140 ? "#175dc6" : "#9cd8f8") 
+                        : 768 <= x <= 1023 ? ( 350 <= y && y <= 530? "#175dc6" : "#ffffff") 
+                        : x < 768 ? (350 <= y && y <= 530? "#175dc6" : "#ffffff") : '#ffffff' }}
                             onMouseOver={changeFont} onMouseLeave={leaveFont}>About me</Link></li>
-                    <li className='liStyle'><Link to="3" spy={true} smooth={true} style={{WebkitTextStroke: '1px #175dc6', fontSize: '22px',color: 1140 <= y &&  y < 1720 ? "#175dc6" : "#9cd8f8"}}
+                    <li className='liStyle'><Link to="3" spy={true} smooth={true} className='linkStyle'
+                    style={{color: 1023 < x ? (1140 <= y &&  y < 1720 ? "#175dc6" : "#9cd8f8") 
+                        : 768 <= x <= 1023 ? ( 530 < y ? "#175dc6" : "#ffffff") 
+                        : x < 768 ? ( 530 < y ? "#175dc6" : "#ffffff") : '#ffffff' }}
                             onMouseOver={changeFont} onMouseLeave={leaveFont}>Project</Link></li>
-                    <li className='liStyle'><Link to="4" spy={true} smooth={true} style={{WebkitTextStroke: '1px #175dc6', fontSize: '22px', color: 1720 <= y? "#175dc6" : "#9cd8f8"}}
+                    <li className='liStyle'><Link to="4" spy={true} smooth={true} className='linkStyle' 
+                    style={{color: 1023 < x ? ( 1720 <= y ? "#175dc6" : "#9cd8f8") 
+                        : 768 <= x <= 1023 ? ( 530 < y  ? "#175dc6" : "#ffffff") 
+                        : x < 768 ? ( 530 < y ? "#175dc6" : "#ffffff") : '#ffffff' }}
                             onMouseOver={changeFont} onMouseLeave={leaveFont}>Contact</Link></li>
                 </ul>
         </StyledHeader>
