@@ -12,6 +12,11 @@ const StyleContact = styled.div`
         top:40vh;
         height:40vh;
     }
+    @media screen and (max-width:767px) {
+        width:100%;
+        height:40vh;
+        top:29vh;
+    }
 `;
 
 const StyleContactDiv = styled.div`
@@ -25,6 +30,10 @@ const StyleContactDiv = styled.div`
         width:100%;
         height:100%;
     }
+    @media screen and (max-width:767px) {
+        width:100%;
+        height:100%;
+    }
 `;
 
 const StyleProfile = styled.div`
@@ -35,6 +44,10 @@ const StyleProfile = styled.div`
     top:50%;
     left:50%;
     transform: translate(-50%, -50%);
+    @media screen and (max-width:767px) {
+        width:100%;
+        height:100%;
+    }
 `;
 
 const StyleH3 = {
@@ -46,28 +59,8 @@ const StyleH3 = {
     WebkitTextStroke: '1.5px #175dc6'
 };
 
-const StyleUl = {
-    listStyle: 'none',
-    fontSize : '15px',
-    color : '#175dc6',
-    marginTop : '3%',
-    marginLeft : '10%',
-    fontWeight : 'bold'
-};
-
 const Styleli = {
     padding: '10px 10px 10px 0px',
-    color : '#175dc6'
-};
-const Stylespan = {
-    float: 'left',
-    width : '200px',
-    textAlign : 'right',
-    marginRight: '10px',
-    fontSize : '16px'
-};
-const Stylespan2 = {
-    fontSize : '13px',
     color : '#175dc6'
 };
 
@@ -77,15 +70,15 @@ const Contact = () => {
             <StyleContactDiv>
                 <StyleProfile>
                     <h3 style={StyleH3}>= Contact =</h3>
-                        <ul style={StyleUl}>
-                            <li style={Styleli}><span style={Stylespan}>KakaoTalk RandomChat :</span>
-                                                <span style={Stylespan2}><a href='https://open.kakao.com/o/sYEpyCEe' target='_blank'>https://open.kakao.com/o/sYEpyCEe</a></span></li>
-                            <li style={Styleli}><span style={Stylespan}>Blog :</span>
-                                                <span style={Stylespan2}><a href='https://blog.naver.com/tjddus0630' target='_blank'>https://blog.naver.com/tjddus0630</a></span></li>
-                            <li style={Styleli}><span style={Stylespan}>Instagram :</span>
-                                                <span style={Stylespan2}><a href='https://www.instagram.com/ye0.7n_s/' target='_blank'>https://www.instagram.com/ye0.7n_s/</a></span></li>
-                            <li style={Styleli}><span style={Stylespan}>E-mail :</span>
-                                                <span style={Stylespan2}>tjddus0630@gmail.com</span></li>
+                        <ul className='contactUl'>
+                            <li style={Styleli}><span className='contactSpan'>KakaoTalk RandomChat :</span>
+                                                <span className='contactSpan2 contactSpan3'><a href='https://open.kakao.com/o/sYEpyCEe' target='_blank'>https://open.kakao.com/o/sYEpyCEe</a></span></li><br/><br/>
+                            <li style={Styleli}><span className='contactSpan'>Blog :</span>
+                                                <span className='contactSpan2'><a className='contactA' href='https://blog.naver.com/tjddus0630' target='_blank'>https://blog.naver.com/tjddus0630</a></span></li><br/>
+                            <li style={Styleli}><span className='contactSpan'>Instagram :</span>
+                                                <span className='contactSpan2'><a className='contactA' href='https://www.instagram.com/ye0.7n_s/' target='_blank'>https://www.instagram.com/ye0.7n_s/</a></span></li><br/>
+                            <li style={Styleli}><span className='contactSpan'>E-mail :</span>
+                                                <span className='contactSpan2'>tjddus0630@gmail.com</span></li>
                         </ul>
                 </StyleProfile>
             </StyleContactDiv>

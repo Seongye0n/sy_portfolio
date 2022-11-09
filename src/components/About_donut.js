@@ -1,6 +1,7 @@
 import React from 'react';
 import {PieChart} from "react-minimal-pie-chart";
 import styled from 'styled-components';
+import '../style/styles.scss';
 
 const StyleChart = styled.div`
     display: grid;
@@ -13,18 +14,30 @@ const StyleChart = styled.div`
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2, 1fr);
     }
+    @media screen and (max-width:767px) {
+        width:100%;
+        height:77%;
+        display:flex;
+    }
 `;
 
 const StyleItem = styled.div`
     padding:20px;
     text-align : center;
+    @media screen and (max-width:767px) {
+        padding:20px 5px;
+    }
 `;
 
-const StyleSpan = {
-    position: 'relative',
-    color:'#fff',
-    WebkitTextStroke: '1px #175dc6',
-};
+const StyleSpan = styled.span`
+    position: relative;
+    color:#fff;
+    -webkit-text-stroke: 1px #175dc6;
+    @media screen and (max-width:767px) {
+        font-size:14px;
+        -webkit-text-stroke: 1px #175dc6;
+    }
+`;
 
 
 const About_donut = () => {
@@ -33,7 +46,7 @@ const About_donut = () => {
     return(
         <StyleChart>
             <StyleItem>
-            <span style={StyleSpan}>HTML</span>
+            <StyleSpan>HTML</StyleSpan>
             <PieChart
                 data={[
                     {
@@ -55,10 +68,11 @@ const About_donut = () => {
                     fill: "#175dc6",
                 }}
                 labelPosition={0}
+                className='styleChart'
             />
             </StyleItem>
             <StyleItem>
-            <span style={StyleSpan}>CSS</span>
+            <StyleSpan>CSS</StyleSpan>
             <PieChart
                 data={[
                     {
@@ -80,10 +94,11 @@ const About_donut = () => {
                     fill: "#175dc6",
                 }}
                 labelPosition={0}
+                className='styleChart'
             />
             </StyleItem>
             <StyleItem>
-            <span style={StyleSpan}>Javascript</span>
+            <StyleSpan>Javascript</StyleSpan>
             <PieChart
                 data={[
                     {
@@ -105,10 +120,11 @@ const About_donut = () => {
                     fill: "#175dc6",
                 }}
                 labelPosition={0}
+                className='styleChart'
             />
             </StyleItem>
             <StyleItem>
-            <span style={StyleSpan}>React</span>
+            <StyleSpan>React</StyleSpan>
             <PieChart
                 data={[
                     {
@@ -131,6 +147,7 @@ const About_donut = () => {
                     fill: "#175dc6",
                 }}
                 labelPosition={0}
+                className='styleChart'
             />
             </StyleItem>
         </StyleChart>

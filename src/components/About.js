@@ -14,6 +14,11 @@ const StyleAbout = styled.div`
         top:40vh;
         height:40vh;
     }
+    @media screen and (max-width:767px) {
+        width:100%;
+        height:80vh;
+        top:29vh;
+    }
 `;
 
 const StyleAboutDiv = styled.div`
@@ -26,6 +31,10 @@ const StyleAboutDiv = styled.div`
     @media screen and (max-width:1023px) {
         width:90%;
         height:80%;
+    }
+    @media screen and (max-width:767px) {
+        width:100%;
+        height:100%;
     }
 `;
 
@@ -42,6 +51,12 @@ const StyleContainer = styled.div`
         width:100%;
         height:100%;
         grid-template-columns: 0.5fr 1fr;
+    }
+    @media screen and (max-width:767px) {
+        width:100%;
+        height:100%;
+        display:grid;
+        grid-template-columns: 1fr;
     }
 `;
 
@@ -91,7 +106,7 @@ const About = () => {
                             <li style={Styleli}><span style={Stylespan2}>2016</span><span style={Stylespan3}>신라대학교 컴퓨터공학과 입학</span></li>
                             <li style={Styleli}><span style={Stylespan2}>2019 ~ 2020</span><span style={Stylespan3}>웹 인턴 및 신라대학교 IT 학과 졸업</span></li>
                             <li style={Styleli}><span style={Stylespan2}>2021 ~ 2022</span><span style={Stylespan3}>인제대학교 약물유전체연구센터 근무<br/>
-                            <span style={{marginLeft: '120px'}}>웹디자인 기능사 자격증 취득 및 Portfolio 제작</span></span></li>
+                            <span className='aboutSpan'>웹디자인 기능사 자격증 취득 및 Portfolio 제작</span></span></li>
                         </ul>
                     </div>
                </StyleContainer>

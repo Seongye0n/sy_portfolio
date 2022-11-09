@@ -20,10 +20,9 @@ const StyledHeader = styled.header`
         z-index:1;
     }
     @media screen and (max-width:767px) {
-        position: fixed;
+        position: sticky;
         width:100%;
         height:4vh;
-        z-index:1;
     }
 `;
 const StyledLogo = styled.div`
@@ -51,6 +50,7 @@ const useScroll = () => {
     //현재 윈도우 스크롤 바의 y좌표를 state를 수정함.
     const onScroll = () => {
         setState({ y: window.scrollY});
+        console.log(window.scrollY);
     };
 
     //window에 onScroll eventlistener를 추가하고, 해당 event에 대한 remove eventlistener를 return함.
@@ -73,6 +73,60 @@ const Header = () => {
         e.target.style.color = '#9cd8f8';
     };
 
+
+    const MenuColor = (x, y, value) => { //화면 해상도, Scroll마다 MenuFontColor 변환
+        switch (value){
+            case 1:{
+                if(1023 < x){
+                    if(y < 570) return '#175dc6';
+                    else return '#9cd8f8';
+                }else if(768 <= x <= 1023){
+                    if(y < 340) return '#175dc6';
+                    else return '#ffffff';
+                }else if(x < 768){
+                    if(y < 100) return '#175dc6';
+                    else return '#ffffff';
+                }
+            } //case1
+            case 2:{
+                if(1023 < x){
+                    if(570 <= y &&  y < 1140 ) return '#175dc6';
+                    else return '#9cd8f8';
+                }else if(768 <= x <= 1023){
+                    if(350 <= y && y <= 530) return '#175dc6';
+                    else return '#ffffff';
+                }else if(x < 768){
+                    if(100 <= y && y <= 360) return '#175dc6';
+                    else return '#ffffff';
+                }
+            }//case2
+            case 3:{
+                if(1023 < x){
+                    if(1140 <= y &&  y < 1720) return '#175dc6';
+                    else return '#9cd8f8';
+                }else if(768 <= x <= 1023){
+                    if(530 < y) return '#175dc6';
+                    else return '#ffffff';
+                }else if(x < 768){
+                    if(620 < y) return '#175dc6';
+                    else return '#ffffff';
+                }
+            }//case3
+            default :{
+                if(1023 < x){
+                    if(1720 <= y) return '#175dc6';
+                    else return '#9cd8f8';
+                }else if(768 <= x <= 1023){
+                    if(530 < y) return '#175dc6';
+                    else return '#ffffff';
+                }else if(x < 768){
+                    if(620 < y) return '#175dc6';
+                    else return '#ffffff';
+                }
+            }//default
+        }//swich(value)
+    }//MenuColor
+
     return(
         <StyledHeader>
             <StyledLogo>
@@ -80,25 +134,13 @@ const Header = () => {
             </StyledLogo>
                 <ul className='ulStyle'>
                     <li className='liStyle'><Link to="1" spy={true} smooth={true} className='linkStyle' 
-                        style={{color: 1023 < x ? (y < 570 ? "#175dc6" : "#9cd8f8") 
-                                : 768 <= x <= 1023 ? ( y < 340 ? "#175dc6" : "#ffffff") 
-                                : x < 768 ? ( y < 340 ? "#175dc6" : "#ffffff") : '#ffffff' }}
-                            onMouseOver={changeFont} onMouseLeave={leaveFont}>Main</Link></li>
+                        style={{color:MenuColor(window.innerWidth,y, 1)}} onMouseOver={changeFont} onMouseLeave={leaveFont}>Main</Link></li>
                     <li className='liStyle'><Link to="2" spy={true} smooth={true} className='linkStyle'  
-                        style={{color: 1023 < x ? (570 <= y &&  y < 1140 ? "#175dc6" : "#9cd8f8") 
-                        : 768 <= x <= 1023 ? ( 350 <= y && y <= 530? "#175dc6" : "#ffffff") 
-                        : x < 768 ? (350 <= y && y <= 530? "#175dc6" : "#ffffff") : '#ffffff' }}
-                            onMouseOver={changeFont} onMouseLeave={leaveFont}>About me</Link></li>
+                        style={{color:MenuColor(window.innerWidth,y, 2)}} onMouseOver={changeFont} onMouseLeave={leaveFont}>About me</Link></li>
                     <li className='liStyle'><Link to="3" spy={true} smooth={true} className='linkStyle'
-                    style={{color: 1023 < x ? (1140 <= y &&  y < 1720 ? "#175dc6" : "#9cd8f8") 
-                        : 768 <= x <= 1023 ? ( 530 < y ? "#175dc6" : "#ffffff") 
-                        : x < 768 ? ( 530 < y ? "#175dc6" : "#ffffff") : '#ffffff' }}
-                            onMouseOver={changeFont} onMouseLeave={leaveFont}>Project</Link></li>
+                        style={{color:MenuColor(window.innerWidth,y, 3)}} onMouseOver={changeFont} onMouseLeave={leaveFont}>Project</Link></li>
                     <li className='liStyle'><Link to="4" spy={true} smooth={true} className='linkStyle' 
-                    style={{color: 1023 < x ? ( 1720 <= y ? "#175dc6" : "#9cd8f8") 
-                        : 768 <= x <= 1023 ? ( 530 < y  ? "#175dc6" : "#ffffff") 
-                        : x < 768 ? ( 530 < y ? "#175dc6" : "#ffffff") : '#ffffff' }}
-                            onMouseOver={changeFont} onMouseLeave={leaveFont}>Contact</Link></li>
+                        style={{color: MenuColor(window.innerWidth,y, 4)}} onMouseOver={changeFont} onMouseLeave={leaveFont}>Contact</Link></li>
                 </ul>
         </StyledHeader>
     );

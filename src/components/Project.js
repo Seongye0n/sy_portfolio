@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import styled from 'styled-components';
 import { Swiper, SwiperSlide} from "swiper/react"; // basic
 import SwiperCore, {Pagination, Navigation} from "swiper";
@@ -17,6 +17,11 @@ const StyleProject = styled.div`
         top:40vh;
         height:40vh;
     }
+    @media screen and (max-width:767px) {
+        width:100%;
+        height:40vh;
+        top:29vh;
+    }
 `;
 
 const StyleProjectDiv = styled.div`
@@ -30,6 +35,10 @@ const StyleProjectDiv = styled.div`
     @media screen and (max-width:1023px) {
         width:80%;
         height:75%;
+    }
+    @media screen and (max-width:767px) {
+        width:90%;
+        height:80%;
     }
 `;
 
@@ -45,7 +54,16 @@ function styleOnA2(e){
 
 SwiperCore.use([Navigation, Pagination]);
 
+const NavVisible = (nav) => {
+
+    if(window.innerWidth <= 767) return !nav;
+    
+    return nav
+}
+
 const Project = () => {
+    const [nav, setNav] = useState(true);
+
     return(
         <StyleProject id="3">
             <StyleProjectDiv>
@@ -53,7 +71,7 @@ const Project = () => {
                     className="banner"
                     spaceBetween={50}
                     slidesPerView={1}
-                    navigation
+                    navigation={NavVisible(nav)}
                     pagination={{ clickable: true }}
                 >
                     <SwiperSlide>

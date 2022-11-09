@@ -13,7 +13,7 @@ const StyleMain = styled.div`
     }
     @media screen and (max-width:767px) {
         width:100%;
-        height:50vh;
+        height:25vh;
         top:4vh;
     }
 `;
@@ -33,6 +33,7 @@ const StyleMainDiv = styled.div`
     @media screen and (max-width:767px) {
         width:100%;
         height:100%;
+        top:50%;
     }
 `;
 
@@ -52,8 +53,10 @@ const StyleProfile = styled.div`
     }
     @media screen and (max-width:767px) {
         width:100%;
-        height:100%;
-        grid-Template-Rows: repeat(2, 1fr);
+        height:90%;
+        top:100%;
+        display:grid;
+        grid-template-rows: 0.5fr 1.5fr;
     }
 `;
 
@@ -66,7 +69,8 @@ const Styleimg = styled.div`
         padding-left:5%;
     }
     @media screen and (max-width:767px) {
-        margin:0;
+        width:100%;
+        height:90%;
         padding:0;
     }
 `;
@@ -78,7 +82,9 @@ const ProfileText = styled.div`
         margin-left:10%;
     }
     @media screen and (max-width:767px) {
-        
+        width:90%;
+        height:90%;
+        padding:0;
     }
 `;
 
@@ -107,7 +113,7 @@ const Main = () => {
                         <p style={{display:'inline'}}><img src="/images/Profile.png" alt="Profile" className='Styledivimg'/></p>
                     </Styleimg>
                     <ProfileText>
-                        <p style={{float: 'left', color:'#175dc6', fontSize: '22px', whiteSpace: 'preWrap', WebkitTextStroke: '0.5px #175dc6'}}> 
+                        <p className='mainText'> 
                             {Text} </p>
                     </ProfileText>
                 </StyleProfile>

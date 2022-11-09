@@ -43,6 +43,7 @@
     }
     .linkStyle{
         font-size:14px;
+        -webkit-text-stroke: 0.5px #175dc6;
     }
  }
 
@@ -52,12 +53,30 @@
     transform: translateY(-50%);
     position: relative;
 }
+.mainText{
+    float: left;
+    color: #175dc6;
+    font-size: 22px;
+    white-space: pre-wrap;
+    -webkit-text-stroke: 0.5px #175dc6;
+}
 @media screen and (max-width:1023px) {
     .Styledivimg{
          width: 100%;
          margin:0;
          padding:0;
          margin-left:5%;
+    }
+}
+@media screen and (max-width:767px) {
+    .Styledivimg{
+        margin:0;
+        margin-top:2%;
+        margin-left:2%;
+    }
+    .mainText{
+        font-size: 14px;
+        margin-top:13%;
     }
 }
 
@@ -79,6 +98,9 @@
     font-weight : bold;
     margin-left : 7%;
 }
+.aboutSpan{
+    margin-left: 120px;
+}
 @media screen and (max-width:1023px) {
     .StyleH3{
         padding-top:3%;
@@ -90,6 +112,33 @@
     }
     .StyleUl{
         margin-left:0;
+    }
+}
+@media screen and (max-width:767px) {
+    .styleChart{
+        width:60px;
+        margin:0;
+        padding:0;
+    }
+    .StyleH3{
+        padding:0;
+        margin-left: 5%;
+        font-size:20px;
+    }
+    .aboutGrid{
+        width:100%;
+        height:100%;
+    }
+    .StyleUl{
+        width:90%;
+        font-size: 15px;
+        margin-top:3%;
+        padding:0;
+        margin-left:3%;
+    }
+    .aboutSpan{
+        width:65%;
+        display:inline-block;
     }
 }
 
@@ -115,5 +164,63 @@
     .StyleSwiperLi{
         width:100%;
         height:100%;
+    }
+}
+@media screen and (max-width:767px) {
+    .StyleSwiperLi{
+        width:99%;
+        height:213px;
+        padding:0;
+        margin:0;
+    }
+    .StyleA{
+        display: inline-block;
+        width: 80%;
+        padding: 0 5%;
+        font-size:12px;
+        top:55%;
+        word-wrap: break-word;
+    }
+}
+
+//Contact
+.contactUl{
+    list-style: none;
+    font-size: 15px;
+    color : #175dc6;
+    margin-top : 3%;
+    margin-left : 10%;
+    font-weight : bold;
+}
+.contactSpan{
+    float: left;
+    width: 200px;
+    text-align : right;
+    margin-right: 10px;
+    font-size : 16px;
+}
+.contactSpan2{
+    font-size : 13px;
+    color: #175dc6;
+}
+
+@media screen and (max-width:767px) {
+    .contactUl{
+        width:100%;
+        height:70%;
+        margin:0;
+        padding:0;
+    }
+    .contactSpan{
+        width: auto;
+        float:left;
+        font-size:16px;
+        margin-left:5%;
+    }
+    .contactSpan2{
+        float: left;
+    }
+    .contactSpan3{
+        margin-left:35%;
     }
 }
