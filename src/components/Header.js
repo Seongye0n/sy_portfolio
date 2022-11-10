@@ -50,7 +50,6 @@ const useScroll = () => {
     //현재 윈도우 스크롤 바의 y좌표를 state를 수정함.
     const onScroll = () => {
         setState({ y: window.scrollY});
-        console.log(window.scrollY);
     };
 
     //window에 onScroll eventlistener를 추가하고, 해당 event에 대한 remove eventlistener를 return함.
