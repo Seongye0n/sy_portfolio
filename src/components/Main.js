@@ -110,7 +110,7 @@ const Main = () => {
             <StyleMainDiv>
                 <StyleProfile>
                     <Styleimg>
-                        <p style={{display:'inline'}}><img src="/images/Profile.png" alt="Profile" className='Styledivimg'/></p>
+                        <p style={{display:'inline'}}><img src={process.env.PUBLIC_URL + '/images/Profile.png'} alt="Profile" className='Styledivimg'/></p>
                     </Styleimg>
                     <ProfileText>
                         <p className='mainText'> 
