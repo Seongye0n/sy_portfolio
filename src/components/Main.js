@@ -90,7 +90,7 @@ const ProfileText = styled.div`
 
 
 const Main = () => {
-    const txt = "Welcome to Park Seong-yeon's portfolio. \n I'm hoping to be a front-end developer.";
+    const txt = "Welcome to Park Seong-yeon's portfolio. \n I'm hoping to be a web publisher & front-end developer.";
     const [Text, setText] = useState('');  //Text = ''
     const [Count,setCount] = useState(0);  //Count = 0
 
