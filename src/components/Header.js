@@ -129,7 +129,7 @@ const Header = () => {
     return(
         <StyledHeader>
             <StyledLogo>
-                <img src='/sy_portfolio/images/logo.png' alt="logo" style={{width:"100%", height:"90%", align:"center"}}/>
+                <img src={process.env.PUBLIC_URL + '/images/logo.jpg'} alt="logo" style={{width:"100%", height:"90%", align:"center"}}/>
             </StyledLogo>
                 <ul className='ulStyle'>
                     <li className='liStyle'><Link to="1" spy={true} smooth={true} className='linkStyle' 
