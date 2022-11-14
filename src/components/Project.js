@@ -76,9 +76,9 @@ const Project = () => {
                 >
                     <SwiperSlide>
                         <img src={process.env.PUBLIC_URL + '/images/project1.jpg'} className='StyleSwiperLi'/>
-                        <a href='https://github.com/Seongye0n/sy_coowoshop.git' target='_blank' alt='프로젝트1'
+                        <a href='https://seongye0n.github.io/sy_coowoshop/' target='_blank' alt='프로젝트1'
                             className='StyleA' onMouseOver={styleOnA} onMouseLeave={styleOnA2} >    
-                            https://github.com/Seongye0n/sy_coowoshop.git</a>
+                            https://seongye0n.github.io/sy_coowoshop/</a>
                     </SwiperSlide>
                     <SwiperSlide>
                     <img src={process.env.PUBLIC_URL + '/images/waiting.jpg'} className='StyleSwiperLi'/>
