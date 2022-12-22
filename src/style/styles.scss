@@ -1,226 +1,546 @@
 //Header
-.ulStyle{
-    position: left;
-    display:inline-block;
-    width: 40%;
-    margin-left: 28%;
-    list-style: none;
+.header{
+    position: fixed;
+    width:100%;
+    height:10vh;
+    top:0;
+    left:0;
+    margin: 0 auto;
+    background:#ffffff;
+    z-index:999;
 }
-.liStyle{
-    display:inline-block;
-    width: 24.6%;
-    color : #9cd8f8;
-    text-align: center;
+.logo{
+    position:relative;
+    float:left;
+    width:10vw;
+    height:7vh;
+    margin-left:10%;
+    padding:1.5vh 1vw;
 }
-.linkStyle{
-    -webkit-text-stroke: 1px #175dc6;
-    font-size: 22px;
-    line-height:2px; 
+.headerUl{
+    position:relative;
+    float:right;
+    width: 60vw;
+    right:10%;
+    margin:0;
+    margin-top:3vh;
+    padding:0;
+}
+.headerLi{
+    float:left;
+    width:24.5%;
+    margin:0;
+    padding:0;
+    list-style-type: none;
+    text-align: right;
+}
+.headerLi > a{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: transparent;
+    border:none; 
+
+    position:relative;
+    cursor: pointer;
+    font-size:1.6rem;
+    color:#9CD8F8;
+    -webkit-text-stroke: 1.5px #175dc6;
+    &:hover{
+        color:#175dc6;
+        -webkit-text-stroke: 1.5px #175dc6;
+    }
 }
 
-@media screen and (max-width:1023px) {
-   .ulStyle{
-        width: 70%;
-        margin:0;
-        padding:0;
-        margin-left:8%;
-   }
-   .liStyle{
-        width: 20%;
-        margin-right: 3%;
-   }
+@media screen and (max-width:1024px) {
+    .headerUl{
+        margin-top:4vh;
+    }
+    .headerLi > a{
+        font-size:1.3rem;
+        color:#9CD8F8;
+        -webkit-text-stroke: 1px #175dc6;
+        &:hover{
+            color:#175dc6;
+            -webkit-text-stroke: 1px #175dc6;
+        }
+    }
 }
 @media screen and (max-width:767px) {
-    .ulStyle{
+    .header{
+        height:6vh;
+    }
+    .logo{
+        display:none;
+    }
+    .headerUl{
+        width:80%;
+        margin-top:0;
+    }
+    .headerLi{
+        width:24%;
+        text-align: center;
+        line-height:13px;
+    }
+    .headerLi > a{
         width:100%;
-        height:100%;
-        margin:0;
-        padding:0;
-    }
-    .liStyle{
-        width: 20%;
-        height:100%;
-    }
-    .linkStyle{
-        font-size:14px;
+        font-size: 14px;
+        color:#9CD8F8;
         -webkit-text-stroke: 0.5px #175dc6;
+        &:hover{
+            color:#175dc6;
+            -webkit-text-stroke: 0.5px #175dc6;
+        }
     }
  }
 
 //Main
+.main{
+    position:relative;
+    width:100%;
+    height:50vh;
+    padding-top: 10vh;
+}
+.mainImg{
+    position:relative;
+    float:left;
+    width:24vw;
+    height:100%;
+    padding:0 2vw;
+    z-index:5;
+}
+.mainProfile{
+    position:relative;
+    float:right;
+    width:50vw;
+    height:100%;
+}
 .Styledivimg{
-    top: 50%;
+    position:relative;
+    width:100%;
+    height:90%;
+    top:50%;
     transform: translateY(-50%);
-    position: relative;
 }
 .mainText{
-    float: left;
+    position:relative;
+    top:50%;
+    transform: translateY(-50%);
     color: #175dc6;
     font-size: 22px;
     white-space: pre-wrap;
     -webkit-text-stroke: 0.5px #175dc6;
 }
 @media screen and (max-width:1023px) {
+    .main{
+        height:38vh;
+    }
     .Styledivimg{
-         width: 100%;
-         margin:0;
-         padding:0;
-         margin-left:5%;
+        height:80%;
+    }
+    .mainText{
+        top:45%;
+        font-size: 20px;
     }
 }
 @media screen and (max-width:767px) {
-    .Styledivimg{
-        margin:0;
-        margin-top:2%;
-        margin-left:2%;
+    .main{
+        top:6vh;
+        height:20vh;
     }
     .mainText{
-        font-size: 14px;
-        margin-top:13%;
+        font-size: 11px;
     }
 }
 
+
 //About
-.StyleH3{
-    display: inline-block;
-    font-size: 22px;
-    color: #9cd8f8;
-    margin-top: 2%;
-    margin-bottom: 0%;
-    margin-left: 15%;
-    -webkit-text-stroke: 1.5px #175dc6;
+.about{
+    position:relative;
+    width:100%;
+    height:93vh;
+    padding-top: 10vh;
+    display:grid;
+    grid-template-rows: 2fr 1fr 1fr; //세로 크기
 }
-.StyleUl{
+.styleH3{
+    position:relative;
+    float:left;
+    display:block;
+    width:95%;
+    height:35px;
+    padding-left:5%;
+    padding-top:5px;
+    font-size: 23px;
+    color: #9CD8F8;
+    -webkit-text-stroke: 1.2px #175dc6;
+    margin:0;
+}
+.styleUl{
+    position:relative;
     float : left;
-    list-style: none;
+    width:90%;
+    margin-top:0;
     font-size : 15px;
     color: #175dc6;
     font-weight : bold;
-    margin-left : 7%;
+    list-style-type: none;
 }
-.aboutSpan{
-    margin-left: 120px;
+.styleli{
+    display: block;
+    width:100%;
+    margin-top:10px;
+}
+.styleli> .spanLeft{
+    position:relative;
+    float:left;
+    text-align: center;
+    margin-right:10px;
+    width:15%;
+}
+.styleli>.aboutSpan{
+    margin-left:16%;
 }
 @media screen and (max-width:1023px) {
-    .StyleH3{
-        padding-top:3%;
-        margin-left: 5%;
+    .styleli> .spanLeft{
+        width:20%;
     }
-    .aboutGrid{
+    .styleli>.aboutSpan{
+        margin-left:22%;
+    }
+}
+@media screen and (max-width:767px) {
+    .about{
+        top:6vh;
+        height:80vh;
+    }
+    .styleUl{
+        padding-left: 5%;
+        font-size : 12px;
+    }
+    .styleH3{
+        font-size: 14px;
+    }
+    .styleli> .spanLeft{
+        display: block;
+        text-align:left;
         width:100%;
-        height:100%;
+        margin-bottom:5px;
     }
-    .StyleUl{
+    .styleli>.spanRight{
+        display: block;
+        text-align:left;
+        width:100%;
+    }
+    .styleli>.aboutSpan{
+        display: block;
+        text-align:left;
+        width:100%;
         margin-left:0;
     }
 }
-@media screen and (max-width:767px) {
-    .styleChart{
-        width:60px;
-        margin:0;
-        padding:0;
-    }
-    .StyleH3{
-        padding:0;
-        margin-left: 5%;
-        font-size:20px;
-    }
-    .aboutGrid{
-        width:100%;
-        height:100%;
-    }
-    .StyleUl{
-        width:90%;
-        font-size: 15px;
-        margin-top:3%;
-        padding:0;
-        margin-left:3%;
-    }
-    .aboutSpan{
-        width:65%;
-        display:inline-block;
-    }
-}
+
+
 
 //Project
-.StyleSwiperLi{
-    position: relative;
+.projectDiv{
+    position:relative;
+    width:100%;
+    height:90vh;
+    padding-top:25vh;
+}
+.projectDiv2{
+    position:absolute;
+    width:99%;
+    height:99%;
+    top:50%;
     left:50%;
-    transform: translate(-50%, 0%);
+    transform: translate(-50%, -50%);
+}
+.swiperSlide{
+    position: relative;
+    height:100%;
+    padding:2% 0;
+    perspective:600px;
+}
+.project{
+    position: absolute;
+    left:50%;
+    transform: translateX(-50%);
+    width:80%;
+    height:88%;
+    transition: all 1.3s;
+    transform-style: preserve-3d;
+}
+.project:hover{
+    transform:translate(-50%, 0%) rotateY(180deg);
+    &.active{
+        position: absolute;
+        left:50%;
+        transform: translateX(-50%);
+        width:80%;
+        height:88%;
+        transition: all 1.3s;
+        transform-style: preserve-3d;
+    }
 }
 
-.StyleA{
-    text-decoration: none;
-    position:absolute; 
-    width: 50%;
-    padding: 0.5% 0%; 
-    text-align: center; 
-    top: 50%;
-    left: 50%; 
-    transform: translate(-50%, -50%); 
-    background-color:rgba(255, 255,  255, 0.7);
+.project>div{
+    width:100%;
+    height:90%;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left:0;
+    top:0;
+    backface-visibility: hidden;
+    border-radius: 50px;
+    border:3px solid #175dc6;
+}
+.project .front{
+    width:100%;
+    height:97%;
+    background-color: #ffffff;
+}
+.front > .projectStart{
+    position:absolute;
+    top:0;
+    display: block;
+    width:100%;
+    height:20%;
+    text-align: center;
+}
+.front > .projectStart > h1{
+    position:relative;
+    top:50%;
+    transform: translateY(-100%);
+    color:#9CD8F8;
+    -webkit-text-stroke: 1px #175dc6;
+}
+.front > .projectMiddle{
+    position:absolute;
+    width:100%;
+    height:50%;
+    top:20%;
+}
+.front > .projectMiddle >.contentImg{
+    width:99.4%;
+    height:100%;
+    border:0.5px dotted #175dc6;
+}
+.front > .projectEnd{
+    position:absolute;
+    bottom:1%;
+    width:100%;
+    height:30%;
+    text-align: center;
+}
+.front > .projectEnd > p{
+    color:#9CD8F8;
+    font-weight: bolder;
+    font-size:14.5px;
+}
+.front > .projectEnd .homepage{
+    position:absolute;
+    display: block;
+    width:100%;
+    height:50px;
+    bottom:5px;
+    padding: 5px 0;
+    border-top:1px dotted #175dc6;
+    &:hover{
+        cursor: pointer;
+    }
+}
+
+.project .back{
+    width:100%;
+    height:97%;
+    transform: rotateY(180deg);
+    background-color: white;
+}
+.back>.projectStart{
+    position:absolute;
+    width:100%;
+    height:15%;
+    top:5%;
+}
+.back .styleH3{
+    position:absolute;
+    display: inline;
+    width:70%;
+    font-size:20px;
+    color:#175dc6;
+    -webkit-text-stroke: 0px;
+    margin-bottom:5px;
+    padding-left:10px;
+    text-align: left;
+}
+.back .iconImg{
+    margin-left:20px;
+}
+.back p{
+    color:#175dc6;
+    font-size:16px;
+    font-weight: bolder;
+    margin-left:25px;
+}
+.back .skillSpan{
+    position:relative;
+    display: block;
+    margin-bottom:2px;
+    color:#175dc6;
+    font-size:16px;
+    font-weight: bolder;
+    margin-left:25px;
+}
+.back>.projectMiddle{
+    position:absolute;
+    width:100%;
+    height:15%;
+    top:28%;
+}
+.back .projectEnd{
+    position:absolute;
+    width:100%;
+    height:35%;
+    top:50%;
+}
+@media screen and (min-width:1024px){
+    .front > .projectEnd .homepage{
+        height:30px;
+    }
 }
 @media screen and (max-width:1023px) {
-    .StyleSwiperLi{
-        width:100%;
+    .projectDiv{
+        height:90vh;
+    }
+    .projectDiv2{
         height:100%;
+    }
+    .swiperSlide{
+        height:100%;
+    }
+    .back > .projectStart{
+        top:8%;
+        height:15%;
+    }
+    .back > .projectMiddle{
+        top:28%;
+    }
+    .back > .projectEnd{
+        top:50%;
+    }
+    .back .styleH3{
+        font-size:18px;
+        padding-left:5px;
+    }
+    .back .iconImg{
+        width:32px;
+        margin-left:20px;
+    }
+    .back p{
+        font-size: 16px;
+        margin-top:10px;
+    }
+    .back .skillSpan{
+        font-size: 16px;
     }
 }
 @media screen and (max-width:767px) {
-    .StyleSwiperLi{
-        width:99%;
-        height:213px;
-        padding:0;
-        margin:0;
+    .projectDiv{
+        top:6vh;
+        height:90vh;
     }
-    .StyleA{
-        display: inline-block;
-        width: 80%;
-        padding: 0 5%;
-        font-size:12px;
-        top:55%;
-        word-wrap: break-word;
+    .project{
+        width:90%;
     }
+    .swiper-button-prev{
+        visibility: hidden;
+    }
+    .swiper-button-next{
+        visibility: hidden;
+    }
+    .front > .projectStart{
+        height:15%;
+    }
+    .front > .projectMiddle{
+        top:15%;
+    }
+    .front > .projectEnd{
+        top:65%;
+    }
+    .front > .projectEnd p{
+        font-size: 12px;
+    }
+    .back > .projectStart{
+        top:10%;
+        height:15%;
+    }
+    .back > .projectMiddle{
+        top:27%;
+    }
+    .back > .projectEnd{
+        top:45%;
+    }
+    .back .styleH3{
+        font-size:16px;
+        padding-left:5px;
+    }
+    .back .iconImg{
+        width:24px;
+        margin-left:20px;
+    }
+    .back p{
+        font-size: 14px;
+        margin-top:5px;
+    }
+    .back .skillSpan{
+        font-size: 14px;
+    }
+   
 }
 
 //Contact
-.contactUl{
-    list-style: none;
-    font-size: 15px;
-    color : #175dc6;
-    margin-top : 3%;
-    margin-left : 10%;
-    font-weight : bold;
+.contact{
+    width:100%;
+    height:15vh;
+    margin-top:10vh;
+}
+.contact .contactDiv{
+    padding-top:5%;
+    padding-left:5%;
+    background-color: #ffffff;
+}
+.contactImg{
+    cursor: pointer;
+    margin-right:20px;
 }
 .contactSpan{
-    float: left;
-    width: 200px;
-    text-align : right;
-    margin-right: 10px;
-    font-size : 16px;
-}
-.contactSpan2{
-    font-size : 13px;
+    position: relative;
+    display: inline-block;
+    top:-10px;
+    margin-left:-10px;
+    font-weight: bolder;
     color: #175dc6;
+    font-size: 16px;
 }
 
 @media screen and (max-width:767px) {
-    .contactUl{
-        width:100%;
-        height:70%;
-        margin:0;
-        padding:0;
+    .contact{
+        margin-top:0;
+        height:5vh;
+        background-color: red;
+    }
+    .contactImg{
+        width:24px;
     }
     .contactSpan{
-        width: auto;
-        float:left;
-        font-size:16px;
-        margin-left:5%;
-    }
-    .contactSpan2{
-        float: left;
-    }
-    .contactSpan3{
-        margin-left:35%;
+        width:100%;
+        margin-top:10px;
+        text-align:center;
+        right:5%;
+        font-size: 12px;
     }
 }

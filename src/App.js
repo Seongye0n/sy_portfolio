@@ -6,14 +6,15 @@ import Project from './components/Project';
 import Contact from './components/Contact';
 
 function App(){
+  
   return(
-    <>
-      <Header/>
+    <div className='content'>
+      <Header />
       <Main/>
       <About/>
       <Project/>
       <Contact/>
-    </>
+    </div>
   )
 }
 
